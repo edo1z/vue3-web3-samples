@@ -17,7 +17,9 @@
           class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start"
         >
           <div class="flex-shrink-0 flex items-center">
-            <router-link to="/">web3ten0 </router-link>
+            <router-link to="/">
+              <h1 class="text-2xl font-extrabold font-mono">web3ten0</h1>
+            </router-link>
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
