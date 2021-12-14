@@ -1,5 +1,5 @@
 <template>
-  <div class="text-3xl font-bold underline">hoge</div>
+  <div class="text-3xl font-bold">web3ten0</div>
 </template>
 
 <script lang="ts">
