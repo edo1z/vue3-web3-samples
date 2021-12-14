@@ -1,15 +1,11 @@
 <template>
-  <Menu />
-  <div class="p-5">
-    <router-view />
-  </div>
+  <div class="mt-10">404 Not Found</div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Menu from "@/layouts/Menu.vue";
 
 export default defineComponent({
-  components: { Menu },
+  name: "Notfound",
 });
 </script>

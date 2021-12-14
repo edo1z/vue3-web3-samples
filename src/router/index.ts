@@ -6,6 +6,18 @@ const routes: Array<RouteRecordRaw> = [
     name: "Home",
     component: () => import(/* webpackChunkName: "home" */ "../views/Home.vue"),
   },
+  {
+    path: "/donate_ether",
+    name: "DonateEther",
+    component: () =>
+      import(/* webpackChunkName: "home" */ "../views/DonateEther.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "Notfound",
+    component: () =>
+      import(/* webpackChunkName: "notfound" */ "../views/Notfound.vue"),
+  },
 ];
 
 const router = createRouter({
