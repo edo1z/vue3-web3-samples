@@ -1,13 +1,13 @@
 <template>
   <ul>
     <li>
-      <router-link to="donate_ether"> Donate Ether </router-link>
+      <router-link to="donate_eth"> Donate ETH </router-link>
     </li>
     <li>
-      <router-link to="send_ether"> Send Ether to someone </router-link>
+      <router-link to="send_eth"> Send ETH to someone </router-link>
     </li>
     <li>
-      <router-link to="buy_nft_with_ether"> Buy NFT with Ether </router-link>
+      <router-link to="buy_nft_with_eth"> Buy NFT with ETH </router-link>
     </li>
     <li>
       <router-link to="get_airdrop_jpyz"> Get a JPYZ airdrop </router-link>

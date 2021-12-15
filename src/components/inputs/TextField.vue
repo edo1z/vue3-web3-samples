@@ -11,6 +11,8 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "TextField",
-  props: { placeholder: { default: "" } },
+  props: {
+    placeholder: { default: "" },
+  },
 });
 </script>

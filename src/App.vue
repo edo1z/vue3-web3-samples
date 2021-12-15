@@ -1,6 +1,6 @@
 <template>
   <Menu />
-  <div class="p-5">
+  <div class="pt-10 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
     <router-view />
   </div>
 </template>
