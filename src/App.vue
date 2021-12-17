@@ -7,9 +7,18 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import { useWalletStore } from "@/stores/wallet";
 import Menu from "@/layouts/Menu.vue";
 
 export default defineComponent({
   components: { Menu },
+  setup() {
+    const wallet = useWalletStore();
+    return { wallet };
+  },
+  async created() {
+    await this.wallet.init();
+    console.log(this.wallet.provider);
+  },
 });
 </script>
