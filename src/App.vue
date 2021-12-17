@@ -18,7 +18,6 @@ export default defineComponent({
   },
   async created() {
     await this.wallet.init();
-    console.log(this.wallet.provider);
   },
 });
 </script>
