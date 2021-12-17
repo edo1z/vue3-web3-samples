@@ -1,6 +1,7 @@
 <template>
   <Menu />
   <div class="pt-10 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <WalletStatus />
     <router-view />
   </div>
 </template>
@@ -9,9 +10,10 @@
 import { defineComponent } from "vue";
 import { useWalletStore } from "@/stores/wallet";
 import Menu from "@/layouts/Menu.vue";
+import WalletStatus from "@/components/WalletStatus.vue";
 
 export default defineComponent({
-  components: { Menu },
+  components: { Menu, WalletStatus },
   setup() {
     const wallet = useWalletStore();
     return { wallet };
