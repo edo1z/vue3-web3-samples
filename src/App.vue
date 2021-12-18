@@ -10,7 +10,7 @@
 import { defineComponent } from "vue";
 import { useWalletStore } from "@/stores/wallet";
 import Menu from "@/layouts/Menu.vue";
-import WalletStatus from "@/components/WalletStatus.vue";
+import WalletStatus from "@/components/wallet/WalletStatus.vue";
 
 export default defineComponent({
   components: { Menu, WalletStatus },

@@ -9,6 +9,7 @@ export const useWalletStore = defineStore("wallet", {
     /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */
     provider: null as any,
     notInstalled: true,
+    currentAccount: null as string | null,
   }),
   actions: {
     async init() {
@@ -22,10 +23,15 @@ export const useWalletStore = defineStore("wallet", {
       }
     },
     async getCurrentAccount() {
-      const accounts = await this.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      console.log("accounts", accounts);
+      try {
+        const accounts: string[] = await this.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        this.currentAccount = accounts[0];
+        console.log("accounts", accounts);
+      } catch (err) {
+        console.log("ERROR: getCurrentAccount()", err);
+      }
     },
   },
 });
