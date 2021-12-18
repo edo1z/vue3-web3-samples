@@ -73,7 +73,8 @@
   </Disclosure>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/vue";
 import { MenuIcon, XIcon, LoginIcon } from "@heroicons/vue/outline";
 
@@ -85,7 +86,7 @@ const navigation = [
   { name: "Links", href: "#", current: false },
 ];
 
-export default {
+export default defineComponent({
   components: {
     Disclosure,
     DisclosureButton,
@@ -95,9 +96,7 @@ export default {
     LoginIcon,
   },
   setup() {
-    return {
-      navigation,
-    };
+    return { navigation };
   },
-};
+});
 </script>

@@ -4,7 +4,9 @@ import { ethers } from "ethers";
 
 export const useWalletStore = defineStore("wallet", {
   state: () => ({
+    /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */
     ethereum: null as any,
+    /* eslint-disable-next-line  @typescript-eslint/no-explicit-any */
     provider: null as any,
     notInstalled: true,
   }),

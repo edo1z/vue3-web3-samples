@@ -1,5 +1,7 @@
 <template>
-  <div v-if="notInstalled">Please install MetaMask Wallet.</div>
+  <div v-if="wallet.notInstalled" class="mb-5 text-red-300">
+    Not connected to MetaMask.<br />
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,8 +11,7 @@ import { useWalletStore } from "@/stores/wallet";
 export default defineComponent({
   setup() {
     const wallet = useWalletStore();
-    const notInstalled = wallet.notInstalled;
-    return { wallet, notInstalled };
+    return { wallet };
   },
 });
 </script>
