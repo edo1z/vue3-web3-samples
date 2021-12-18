@@ -1,6 +1,6 @@
 <template>
   <h2 class="text-2xl font-bold mb-5">Donate ETH</h2>
-  <TextField type="number" v-model="amount" />&nbsp;ETH<br />
+  <TextField type="number" v-model="amount" :error="inputError" unit="ETH" />
   <Button class="mt-5" :disabled="!isButtonEnabled" @click="donate">
     Donate
   </Button>
@@ -24,10 +24,16 @@ export default defineComponent({
   },
   data: () => ({
     amount: 0.0,
+    inputError: "",
   }),
   methods: {
     donate() {
-      console.log("donate...");
+      if (this.amount <= 0) {
+        this.inputError = "Please enter a number greater than 0. ";
+      } else {
+        this.inputError = "";
+        console.log("donate...");
+      }
     },
   },
 });
