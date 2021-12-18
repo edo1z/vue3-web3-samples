@@ -1,7 +1,7 @@
 <template>
   <input
     type="text"
-    class="rounded-md sm:text-sm py-1 px-2 dark:text-black dark:bg-gray-700 dark:text-white"
+    class="rounded-md sm:text-sm py-1 px-2 dark:text-black dark:bg-gray-900 dark:text-white border-2 border-double border-purple-500"
     :placeholder="placeholder"
   />
 </template>
