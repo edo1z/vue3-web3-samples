@@ -1,6 +1,6 @@
 <template>
   <h2 class="text-2xl font-bold mb-5">Donate ETH</h2>
-  <TextField type="number" />&nbsp;ETH<br />
+  <TextField type="number" v-model="amount" />&nbsp;ETH<br />
   <Button class="mt-5" :disabled="!isButtonEnabled" @click="donate">
     Donate
   </Button>
@@ -22,6 +22,9 @@ export default defineComponent({
     });
     return { wallet, isButtonEnabled };
   },
+  data: () => ({
+    amount: 0.0,
+  }),
   methods: {
     donate() {
       console.log("donate...");
