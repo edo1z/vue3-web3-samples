@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import detectEthereumProvider from "@metamask/detect-provider";
 import { ethers } from "ethers";
+import { markRaw } from "vue";
 
 export const useWalletStore = defineStore("wallet", {
   state: () => ({
@@ -18,8 +19,10 @@ export const useWalletStore = defineStore("wallet", {
         this.notInstalled = true;
       } else {
         this.notInstalled = false;
-        this.ethereum = window.ethereum;
-        this.provider = new ethers.providers.Web3Provider(this.ethereum);
+        this.ethereum = markRaw(window.ethereum);
+        this.provider = markRaw(
+          new ethers.providers.Web3Provider(this.ethereum)
+        );
       }
     },
     async getCurrentAccount() {
@@ -28,7 +31,6 @@ export const useWalletStore = defineStore("wallet", {
           method: "eth_requestAccounts",
         });
         this.currentAccount = accounts[0];
-        console.log("accounts", accounts);
       } catch (err) {
         console.log("ERROR: getCurrentAccount()", err);
       }

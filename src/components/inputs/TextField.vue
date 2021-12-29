@@ -26,7 +26,9 @@ export default defineComponent({
   },
   setup(props, context) {
     const value = ref(props.modelValue);
-    watchEffect(() => context.emit("update:modelValue", value));
+    watchEffect(() => {
+      context.emit("update:modelValue", value.value);
+    });
     return { value };
   },
 });
